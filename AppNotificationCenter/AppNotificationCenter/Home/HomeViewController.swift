@@ -18,10 +18,12 @@ final class HomeViewController: UIViewController {
     }
     
     @objc func handleNotificationMac(notification: NSNotification) {
+        homeScreen?.logoAppleImageView.image = UIImage.mac
         view.backgroundColor = notification.object as? UIColor
     }
     
     @objc func handleNotificationImac(notification: NSNotification) {
+        homeScreen?.logoAppleImageView.image = UIImage.imac
         view.backgroundColor = notification.object as? UIColor
     }
     

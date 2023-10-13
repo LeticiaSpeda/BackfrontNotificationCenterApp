@@ -5,7 +5,7 @@ protocol HomeScreenProtocol: AnyObject {
 }
 
 final class HomeScreen: UIView {
-
+    
     weak var delegate: HomeScreenProtocol?
     
     private lazy var mainHStack: UIStackView = {
@@ -16,7 +16,7 @@ final class HomeScreen: UIView {
         return stack
     }()
     
-    private lazy var logoAppleImageView: UIImageView = {
+    private(set) lazy var logoAppleImageView: UIImageView = {
         let view = UIImageView(image: UIImage.apple)
         view.contentMode = .scaleAspectFill
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -64,8 +64,6 @@ final class HomeScreen: UIView {
         self.delegate = delegate
     }
     
-    
-    
     private func commonInit() {
         configureHierarchy()
         configureConstraints()
@@ -88,7 +86,7 @@ final class HomeScreen: UIView {
             
             logoAppleImageView.heightAnchor.constraint(equalToConstant: 200),
             logoAppleImageView.widthAnchor.constraint(equalToConstant: 100),
-
+            
             
             navigationScreenButton.heightAnchor.constraint(equalToConstant: 40),
             navigationScreenButton.widthAnchor.constraint(equalToConstant: 100)
