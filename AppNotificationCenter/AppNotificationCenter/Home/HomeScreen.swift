@@ -23,11 +23,11 @@ final class HomeScreen: UIView {
         return view
     }()
     
-    private lazy var nameImageLabel: UILabel = {
+    private(set) lazy var nameImageLabel: UILabel = {
         let label = UILabel()
         label.text = "Apple"
         label.textColor = .black
-        label.font = .systemFont(ofSize: 20)
+        label.font = .boldSystemFont(ofSize: 22)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
