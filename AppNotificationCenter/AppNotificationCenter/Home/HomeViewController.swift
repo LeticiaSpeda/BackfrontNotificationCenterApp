@@ -40,6 +40,21 @@ extension HomeViewController: HomeScreenProtocol {
     func tappedButtonClique() {
         let controller = SelectionViewController()
         controller.modalPresentationStyle = .fullScreen
+        controller.delegate(self)
         present(controller, animated: true)
+    }
+}
+
+extension HomeViewController: SelectionViewControllerProtocol {
+    func configureNotificationMac() {
+        homeScreen?.logoAppleImageView.image = UIImage.mac
+        homeScreen?.nameImageLabel.text = "Macbook"
+        view.backgroundColor = .red
+    }
+    
+    func configureNotificationImac() {
+        homeScreen?.logoAppleImageView.image = UIImage.imac
+        homeScreen?.nameImageLabel.text = "Imac"
+        view.backgroundColor = .green
     }
 }

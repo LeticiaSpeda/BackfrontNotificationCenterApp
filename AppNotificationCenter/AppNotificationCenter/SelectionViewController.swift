@@ -1,6 +1,12 @@
 import UIKit
 
+protocol SelectionViewControllerProtocol: AnyObject {
+    func configureNotificationMac()
+    func configureNotificationImac()
+}
+
 final class SelectionViewController: UIViewController {
+    private weak var delegate: SelectionViewControllerProtocol?
     
     var selectionView = SelectionView()
     var screenMain = HomeViewController()
@@ -15,16 +21,20 @@ final class SelectionViewController: UIViewController {
         super.viewDidLoad()
         selectionView.delegate = self
     }
+    
+     func delegate(_ delegate: SelectionViewControllerProtocol) {
+        self.delegate = delegate
+    }
 }
 
-extension SelectionViewController: SelectionViewControllerProtocol {
+extension SelectionViewController: SelectionViewProtocol {
     func tappedMacButton() {
-        NotificationCenter.default.post(name: Notification.Name("Mac"), object: UIColor.red)
+        delegate?.configureNotificationMac()
         dismiss(animated: true)
     }
     
     func tappedImacButton() {
-        NotificationCenter.default.post(name: Notification.Name("Imac"), object: UIColor.green)
+        delegate?.configureNotificationImac()
         dismiss(animated: true)
     }
 }

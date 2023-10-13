@@ -83,7 +83,6 @@
 				E0477E402AD47BA1002B6DA2 /* Assets */,
 				E0477E3F2AD47B88002B6DA2 /* Aplication */,
 				E04CFC152AD4560200A895FC /* Info.plist */,
-				E0E2F2802AD974F700AA5379 /* SelectionView.swift */,
 			);
 			path = AppNotificationCenter;
 			sourceTree = "<group>";
@@ -93,6 +92,7 @@
 			children = (
 				E04CFC0B2AD455FD00A895FC /* HomeScreen.swift */,
 				E0477E412AD47F82002B6DA2 /* HomeViewController.swift */,
+				E0E2F2802AD974F700AA5379 /* SelectionView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";

@@ -1,13 +1,13 @@
 import UIKit
 
-protocol SelectionViewControllerProtocol: AnyObject {
+protocol SelectionViewProtocol: AnyObject {
     func tappedMacButton()
     func tappedImacButton()
 }
 
 final class SelectionView: UIView {
     
-    weak var delegate: SelectionViewControllerProtocol?
+    weak var delegate: SelectionViewProtocol?
     
     var screenMain = HomeScreen()
     
@@ -78,9 +78,7 @@ final class SelectionView: UIView {
         delegate?.tappedImacButton()
     }
     
-    
-   
-    private func delegate(_ delegate: SelectionViewControllerProtocol) {
+    private func delegate(_ delegate: SelectionViewProtocol) {
         self.delegate = delegate
     }
     
